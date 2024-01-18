@@ -10,8 +10,8 @@ class FoodThreadExecutor:
 
     # Separa a ação de salvar o alimento no banco de dados 
     # como uma task para ser executada em paralelo
-    async def _task(self, table_item):
-        self._model.parse(table_item)
+    async def _task(self, item):
+        self._model.parse(item)
         await self._model.insert()  
 
     # Essa função serve para encapsular a task acima para ser executada 
