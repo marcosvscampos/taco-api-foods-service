@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 
 from app.services.food_service import FoodService
-#from app.services.food_service_sync import FoodService
 
 router = APIRouter()
 
