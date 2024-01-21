@@ -10,9 +10,6 @@ class SearchFoodsService:
         self._model_filter:dict = self._filters.build_model_filter()
 
     async def execute(self) -> list[FoodDTO]:
-        print(">>> Executing search service")
-        print(self._filters)
-
         foods = await self.__do_search() 
         foods_dto:list[FoodDTO] = []
         for item in foods:
