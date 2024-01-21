@@ -1,15 +1,16 @@
 from app.models.food import Food
-from app.readers.xslx_reader import read
 
 from app.executors.food_thread_executor import FoodThreadExecutor
 
-class FoodService:
-    
+from app.readers.xslx_reader import read
+
+class LoadFoodsService:
+
     def __init__(self):
         self._food = Food()
         self._executor = FoodThreadExecutor(model=self._food)
 
-    async def load_foods(self):
+    async def execute(self):
         status = {}
         
         reg_count = await self._food.count()
@@ -23,4 +24,4 @@ class FoodService:
             
         print(f"[food_service#load_foods] All {len(table_lines)} has been load to database")
         status['status'] = 'Completed'
-        return status           
+        return status
