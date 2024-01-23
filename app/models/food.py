@@ -10,7 +10,7 @@ class Food(Document):
     calories: Optional[float] = None
     proteins: Optional[float] = None
     fats: Optional[float] = None
-    cabohidrates: Optional[float] = None
+    carbohidrates: Optional[float] = None
 
     class Settings:
         name = "Foods"
@@ -25,7 +25,7 @@ class Food(Document):
         self.calories = self.__round(item[1])
         self.proteins = self.__round(item[3])
         self.fats = self.__round(item[4])
-        self.cabohidrates = self.__round(item[5])
+        self.carbohidrates = self.__round(item[5])
         return self
 
     def __round(self, val):
