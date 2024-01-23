@@ -1,9 +1,10 @@
 from fastapi import Query
+from typing import Optional
 from pydantic import BaseModel
 
 class FoodFilter(BaseModel):
 
-    name: str = Query(None, description='Parte do nome do alimento')
+    name: Optional[str] = Query(None, description='Parte do nome do alimento')
     page: int = Query(1, ge=1, description='Número da página')
     size: int = Query(10, ge=1, le=100, description='Limite de registros por página')
 
